@@ -1,3 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("Bot Afiliado iniciado com sucesso!");
+    const mensagem = document.querySelector("p");
+
+    if (mensagem) {
+        mensagem.textContent = "Bot Afiliado carregado e pronto!";
+    }
 });
