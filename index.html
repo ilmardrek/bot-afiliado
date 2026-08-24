@@ -6,6 +6,11 @@
 
     <title>Bot Afiliado | Conteúdo para Afiliados e TikTok</title>
 
+    <!-- ÍCONE OFICIAL DO BOT AFILIADO NA ABA DO NAVEGADOR -->
+    <link rel="icon" type="image/png" href="bot_afiliado_1024x1024.png">
+    <link rel="shortcut icon" type="image/png" href="bot_afiliado_1024x1024.png">
+    <link rel="apple-touch-icon" href="bot_afiliado_1024x1024.png">
+
     <meta
         name="description"
         content="Bot Afiliado é uma ferramenta desktop para preparação de conteúdos de produtos afiliados e integração autorizada com o TikTok."
@@ -63,16 +68,14 @@
             font-weight: bold;
         }
 
-        .logo-icon {
-            width: 46px;
-            height: 46px;
+        /* LOGO OFICIAL DO BOT AFILIADO */
+        .logo-image {
+            width: 54px;
+            height: 54px;
             border-radius: 50%;
-            display: grid;
-            place-items: center;
-            background: #111827;
+            object-fit: cover;
             border: 2px solid #22d3ee;
-            color: #22d3ee;
-            font-weight: bold;
+            background: #111827;
         }
 
         .nav-links {
@@ -154,6 +157,20 @@
             border-radius: 20px;
             padding: 28px;
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+            text-align: center;
+        }
+
+        /* LOGO OFICIAL TAMBÉM VISÍVEL NO CONTEÚDO DO SITE */
+        .app-logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #22d3ee;
+            background: #0b1020;
+            margin: 0 auto 20px;
+            display: block;
+            box-shadow: 0 10px 35px rgba(34, 211, 238, 0.15);
         }
 
         .app-card h3 {
@@ -166,6 +183,8 @@
             padding: 13px 0;
             border-bottom: 1px solid #263044;
             color: #cbd5e1;
+            text-align: left;
+            gap: 15px;
         }
 
         .status:last-child {
@@ -175,6 +194,7 @@
         .ok {
             color: #4ade80;
             font-weight: bold;
+            text-align: right;
         }
 
         section {
@@ -319,6 +339,20 @@
             flex-wrap: wrap;
         }
 
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #22d3ee;
+        }
+
         .legal-links {
             display: flex;
             gap: 20px;
@@ -363,6 +397,11 @@
             section {
                 padding: 60px 0;
             }
+
+            .app-logo {
+                width: 125px;
+                height: 125px;
+            }
         }
     </style>
 </head>
@@ -374,7 +413,11 @@
         <nav>
 
             <a href="#inicio" class="logo">
-                <span class="logo-icon">BA</span>
+                <img
+                    src="bot_afiliado_1024x1024.png"
+                    alt="Logo oficial do Bot Afiliado"
+                    class="logo-image"
+                >
                 Bot Afiliado
             </a>
 
@@ -437,6 +480,12 @@
 
 
             <div class="app-card">
+
+                <img
+                    src="bot_afiliado_1024x1024.png"
+                    alt="Logo oficial do aplicativo Bot Afiliado"
+                    class="app-logo"
+                >
 
                 <h3>Painel do Bot Afiliado</h3>
 
@@ -810,7 +859,14 @@
 
         <div class="footer-content">
 
-            <strong>Bot Afiliado</strong>
+            <div class="footer-brand">
+                <img
+                    src="bot_afiliado_1024x1024.png"
+                    alt="Logo Bot Afiliado"
+                    class="footer-logo"
+                >
+                <strong>Bot Afiliado</strong>
+            </div>
 
             <div class="legal-links">
 
