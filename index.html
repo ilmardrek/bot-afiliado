@@ -4,17 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Bot Afiliado | Conteúdo para Afiliados e TikTok</title>
+    <title>Bot Afiliado | Ferramenta para Criadores de Conteúdo</title>
 
-    <!-- ÍCONE OFICIAL DO BOT AFILIADO NA ABA DO NAVEGADOR -->
+    <meta name="description"
+          content="Bot Afiliado é uma ferramenta desktop para criação, preparação e publicação de conteúdos de produtos afiliados com integração autorizada pelo usuário ao TikTok.">
+
     <link rel="icon" type="image/png" href="bot_afiliado_1024x1024.png">
-    <link rel="shortcut icon" type="image/png" href="bot_afiliado_1024x1024.png">
-    <link rel="apple-touch-icon" href="bot_afiliado_1024x1024.png">
-
-    <meta
-        name="description"
-        content="Bot Afiliado é uma ferramenta desktop para preparação de conteúdos de produtos afiliados e integração autorizada com o TikTok."
-    >
 
     <style>
         * {
@@ -23,384 +18,326 @@
             padding: 0;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #0b1020;
-            color: #f8fafc;
+            background: #08101f;
+            color: #ffffff;
             line-height: 1.6;
         }
 
         a {
-            color: inherit;
             text-decoration: none;
-        }
-
-        .container {
-            width: min(1120px, 92%);
-            margin: auto;
+            color: inherit;
         }
 
         header {
+            background: #070d1a;
+            border-bottom: 1px solid #26334b;
             position: sticky;
             top: 0;
-            z-index: 50;
-            background: rgba(11, 16, 32, 0.96);
-            border-bottom: 1px solid #28324a;
+            z-index: 10;
         }
 
-        nav {
-            min-height: 76px;
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 25px;
+            gap: 20px;
         }
 
-        .logo {
+        .brand {
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 20px;
+            font-size: 23px;
             font-weight: bold;
         }
 
-        /* LOGO OFICIAL DO BOT AFILIADO */
-        .logo-image {
-            width: 54px;
-            height: 54px;
+        .brand img {
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #22d3ee;
-            background: #111827;
         }
 
-        .nav-links {
+        .menu {
             display: flex;
-            align-items: center;
-            gap: 22px;
-            font-size: 14px;
+            gap: 25px;
+            flex-wrap: wrap;
         }
 
-        .nav-links a:hover {
-            color: #22d3ee;
+        .menu a {
+            color: #e5e7eb;
+        }
+
+        .menu a:hover {
+            color: #24d8ee;
         }
 
         .hero {
-            padding: 100px 0 80px;
+            padding: 90px 25px;
             background:
-                radial-gradient(circle at 80% 20%, #14365a 0, transparent 32%),
-                radial-gradient(circle at 10% 30%, #192b4d 0, transparent 28%);
+                radial-gradient(circle at top right, #12335a 0%, transparent 35%),
+                #08101f;
         }
 
-        .hero-grid {
+        .hero-container {
+            max-width: 1200px;
+            margin: auto;
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 60px;
             align-items: center;
         }
 
-        .tag {
+        .badge {
             display: inline-block;
-            padding: 8px 14px;
-            border-radius: 999px;
-            background: #13283d;
-            color: #67e8f9;
-            border: 1px solid #24506c;
-            font-size: 13px;
-            margin-bottom: 22px;
+            border: 1px solid #1b7590;
+            background: #102a3d;
+            color: #4ce3f5;
+            padding: 8px 16px;
+            border-radius: 30px;
+            margin-bottom: 25px;
         }
 
         h1 {
-            font-size: clamp(42px, 6vw, 70px);
+            font-size: 64px;
             line-height: 1.05;
-            margin-bottom: 24px;
+            margin-bottom: 25px;
         }
 
         .hero p {
-            font-size: 19px;
             color: #cbd5e1;
-            max-width: 680px;
-            margin-bottom: 32px;
+            font-size: 20px;
+            max-width: 700px;
+            margin-bottom: 30px;
         }
 
         .buttons {
             display: flex;
+            gap: 15px;
             flex-wrap: wrap;
-            gap: 14px;
         }
 
         .button {
             display: inline-block;
-            padding: 14px 24px;
-            border-radius: 10px;
+            padding: 14px 22px;
+            border-radius: 8px;
             font-weight: bold;
+        }
+
+        .primary {
+            background: #26d5ea;
+            color: #03121b;
+        }
+
+        .secondary {
+            border: 1px solid #475569;
+            color: #ffffff;
+        }
+
+        .panel {
+            background: #111b2b;
             border: 1px solid #334155;
-        }
-
-        .button-primary {
-            background: #22d3ee;
-            color: #07111f;
-            border-color: #22d3ee;
-        }
-
-        .button-secondary:hover {
-            border-color: #22d3ee;
-        }
-
-        .app-card {
-            background: #111827;
-            border: 1px solid #29344b;
             border-radius: 20px;
-            padding: 28px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+            padding: 35px;
             text-align: center;
         }
 
-        /* LOGO OFICIAL TAMBÉM VISÍVEL NO CONTEÚDO DO SITE */
-        .app-logo {
-            width: 150px;
-            height: 150px;
+        .panel img {
+            width: 160px;
+            max-width: 100%;
+            margin-bottom: 18px;
             border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #22d3ee;
-            background: #0b1020;
-            margin: 0 auto 20px;
-            display: block;
-            box-shadow: 0 10px 35px rgba(34, 211, 238, 0.15);
         }
 
-        .app-card h3 {
-            margin-bottom: 20px;
+        .panel h2 {
+            margin-bottom: 25px;
         }
 
         .status {
             display: flex;
             justify-content: space-between;
-            padding: 13px 0;
-            border-bottom: 1px solid #263044;
-            color: #cbd5e1;
-            text-align: left;
             gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #293548;
+            text-align: left;
         }
 
         .status:last-child {
-            border: 0;
+            border-bottom: none;
         }
 
         .ok {
-            color: #4ade80;
+            color: #35e681;
             font-weight: bold;
-            text-align: right;
         }
 
         section {
-            padding: 85px 0;
+            padding: 80px 25px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
         }
 
         .section-title {
-            max-width: 760px;
-            margin-bottom: 45px;
+            text-align: center;
+            margin-bottom: 50px;
         }
 
         .section-title h2 {
             font-size: 38px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .section-title p {
-            color: #94a3b8;
-            font-size: 17px;
+            color: #aebbd0;
+            max-width: 760px;
+            margin: auto;
         }
 
-        .grid {
+        .cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 22px;
         }
 
         .card {
-            background: #111827;
-            border: 1px solid #273249;
-            border-radius: 16px;
+            background: #111b2b;
+            border: 1px solid #2b3950;
+            border-radius: 15px;
             padding: 28px;
         }
 
-        .card .icon {
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
-
         .card h3 {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            color: #4ce3f5;
         }
 
         .card p {
-            color: #aebbd0;
+            color: #c4cedc;
         }
 
-        .dark-section {
-            background: #080d18;
-            border-top: 1px solid #1d2739;
-            border-bottom: 1px solid #1d2739;
+        .light-section {
+            background: #0c1627;
         }
 
         .steps {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
+            gap: 20px;
         }
 
         .step {
+            background: #111b2b;
+            border-radius: 15px;
             padding: 25px;
-            background: #111827;
-            border-radius: 14px;
-            border: 1px solid #273249;
+            border: 1px solid #2b3950;
         }
 
         .number {
-            width: 38px;
-            height: 38px;
-            display: grid;
-            place-items: center;
-            border-radius: 50%;
-            background: #22d3ee;
-            color: #07111f;
-            font-weight: bold;
-            margin-bottom: 16px;
-        }
-
-        .step p {
-            color: #aebbd0;
-            margin-top: 8px;
-        }
-
-        .control-box {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 35px;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            justify-content: center;
             align-items: center;
-            background: #111827;
-            border: 1px solid #273249;
-            border-radius: 20px;
-            padding: 40px;
+            background: #24d8ee;
+            color: #061019;
+            font-weight: bold;
+            border-radius: 50%;
+            margin-bottom: 18px;
         }
 
-        .check-list {
+        .info-box {
+            max-width: 900px;
+            margin: auto;
+            background: #111b2b;
+            border: 1px solid #2b3950;
+            padding: 35px;
+            border-radius: 15px;
+        }
+
+        .info-box p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .links-area {
             display: grid;
-            gap: 14px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
-        .check {
-            padding: 14px 16px;
-            border-radius: 10px;
-            background: #0b1220;
-            border: 1px solid #263249;
+        .link-card {
+            background: #111b2b;
+            border: 1px solid #2b3950;
+            border-radius: 15px;
+            padding: 25px;
         }
 
-        .check strong {
-            color: #4ade80;
+        .link-card h3 {
+            margin-bottom: 10px;
         }
 
-        .faq {
-            display: grid;
-            gap: 15px;
-        }
-
-        .faq-item {
-            background: #111827;
-            border: 1px solid #273249;
-            border-radius: 12px;
-            padding: 22px;
-        }
-
-        .faq-item h3 {
-            margin-bottom: 8px;
-        }
-
-        .faq-item p {
+        .link-card p {
             color: #aebbd0;
+            margin-bottom: 18px;
+        }
+
+        .link-card a {
+            color: #4ce3f5;
+            font-weight: bold;
         }
 
         footer {
-            border-top: 1px solid #273249;
-            padding: 35px 0;
-            background: #070b14;
+            border-top: 1px solid #26334b;
+            padding: 35px 25px;
+            text-align: center;
+            color: #9eabc0;
         }
 
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 25px;
-            flex-wrap: wrap;
+        footer .footer-links {
+            margin-bottom: 15px;
         }
 
-        .footer-brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        footer a {
+            color: #dce6f2;
+            margin: 0 10px;
         }
 
-        .footer-logo {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid #22d3ee;
+        footer a:hover {
+            color: #4ce3f5;
         }
 
-        .legal-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .legal-links a {
-            color: #67e8f9;
-            text-decoration: underline;
-        }
-
-        .disclaimer {
-            font-size: 13px;
-            color: #64748b;
-            margin-top: 18px;
-        }
-
-        @media (max-width: 850px) {
-            .hero-grid,
-            .control-box {
+        @media (max-width: 900px) {
+            .hero-container {
                 grid-template-columns: 1fr;
             }
 
-            .grid {
+            h1 {
+                font-size: 44px;
+            }
+
+            .cards,
+            .steps,
+            .links-area {
                 grid-template-columns: 1fr;
             }
 
-            .steps {
-                grid-template-columns: 1fr 1fr;
+            .nav {
+                flex-direction: column;
             }
 
-            .nav-links {
-                display: none;
-            }
-        }
-
-        @media (max-width: 520px) {
-            .steps {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-
-            .app-logo {
-                width: 125px;
-                height: 125px;
+            .menu {
+                justify-content: center;
             }
         }
     </style>
@@ -409,485 +346,334 @@
 <body>
 
 <header>
-    <div class="container">
-        <nav>
+    <nav class="nav">
+        <a href="index.html" class="brand">
+            <img src="bot_afiliado_1024x1024.png" alt="Logo Bot Afiliado">
+            <span>Bot Afiliado</span>
+        </a>
 
-            <a href="#inicio" class="logo">
-                <img
-                    src="bot_afiliado_1024x1024.png"
-                    alt="Logo oficial do Bot Afiliado"
-                    class="logo-image"
-                >
-                Bot Afiliado
-            </a>
-
-            <div class="nav-links">
-                <a href="#recursos">Recursos</a>
-                <a href="#como-funciona">Como funciona</a>
-                <a href="#seguranca">Segurança</a>
-                <a href="#faq">Dúvidas</a>
-                <a href="termos.html">Termos</a>
-                <a href="privacidade.html">Privacidade</a>
-            </div>
-
-        </nav>
-    </div>
+        <div class="menu">
+            <a href="#sobre">Sobre</a>
+            <a href="#recursos">Recursos</a>
+            <a href="#funcionamento">Como funciona</a>
+            <a href="#seguranca">Segurança</a>
+            <a href="termos.html">Termos</a>
+            <a href="privacidade.html">Privacidade</a>
+        </div>
+    </nav>
 </header>
-
 
 <main>
 
-    <section class="hero" id="inicio">
+<section class="hero">
+    <div class="hero-container">
 
-        <div class="container hero-grid">
+        <div>
+            <span class="badge">Ferramenta para criadores e afiliados</span>
 
-            <div>
+            <h1>
+                Crie, prepare e publique conteúdo com mais controle.
+            </h1>
 
-                <span class="tag">
-                    Conteúdo para criadores e afiliados
-                </span>
+            <p>
+                O Bot Afiliado é uma ferramenta desktop que auxilia criadores
+                na preparação de conteúdos de produtos afiliados, criação de
+                vídeos verticais e publicação em contas do TikTok autorizadas
+                pelo próprio usuário.
+            </p>
 
-                <h1>
-                    Prepare conteúdo e publique com mais controle.
-                </h1>
+            <div class="buttons">
+                <a class="button primary" href="#funcionamento">
+                    Conheça o funcionamento
+                </a>
 
+                <a class="button secondary" href="#recursos">
+                    Ver recursos
+                </a>
+            </div>
+        </div>
+
+        <div class="panel">
+            <img src="bot_afiliado_1024x1024.png" alt="Bot Afiliado">
+
+            <h2>Painel do Bot Afiliado</h2>
+
+            <div class="status">
+                <span>Preparação de conteúdo</span>
+                <span class="ok">Disponível</span>
+            </div>
+
+            <div class="status">
+                <span>Vídeo vertical</span>
+                <span class="ok">Disponível</span>
+            </div>
+
+            <div class="status">
+                <span>Conexão TikTok</span>
+                <span class="ok">Autorizada pelo usuário</span>
+            </div>
+
+            <div class="status">
+                <span>Confirmação antes do envio</span>
+                <span class="ok">Obrigatória</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="sobre">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Sobre o Bot Afiliado</h2>
+            <p>
+                Uma ferramenta desenvolvida para organizar etapas de criação
+                e publicação de conteúdo digital.
+            </p>
+        </div>
+
+        <div class="info-box">
+            <p>
+                O Bot Afiliado funciona como um aplicativo desktop utilizado
+                pelo próprio criador de conteúdo.
+            </p>
+
+            <p>
+                A ferramenta permite preparar textos promocionais, organizar
+                informações de produtos, gerar vídeos em formato vertical e,
+                quando autorizado pelo usuário, conectar sua conta do TikTok
+                para realizar ações disponibilizadas pela plataforma.
+            </p>
+
+            <p>
+                O usuário mantém controle sobre sua conta e pode revisar o
+                conteúdo antes do envio.
+            </p>
+
+            <p>
+                O Bot Afiliado é uma ferramenta independente e não representa,
+                não pertence e não é um produto oficial do TikTok ou do
+                Mercado Livre.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="recursos" class="light-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Recursos</h2>
+            <p>
+                Principais funcionalidades disponíveis no aplicativo.
+            </p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Preparação de conteúdo</h3>
                 <p>
-                    O Bot Afiliado é uma ferramenta desktop para
-                    criadores que desejam preparar conteúdos de
-                    produtos afiliados e conectar suas próprias
-                    contas do TikTok de forma autorizada.
+                    Organiza o nome do produto, texto de divulgação,
+                    informações promocionais e link utilizado pelo criador.
                 </p>
-
-                <div class="buttons">
-
-                    <a
-                        href="#como-funciona"
-                        class="button button-primary"
-                    >
-                        Conheça o funcionamento
-                    </a>
-
-                    <a
-                        href="#recursos"
-                        class="button button-secondary"
-                    >
-                        Ver recursos
-                    </a>
-
-                </div>
-
             </div>
 
-
-            <div class="app-card">
-
-                <img
-                    src="bot_afiliado_1024x1024.png"
-                    alt="Logo oficial do aplicativo Bot Afiliado"
-                    class="app-logo"
-                >
-
-                <h3>Painel do Bot Afiliado</h3>
-
-                <div class="status">
-                    <span>Preparação de conteúdo</span>
-                    <span class="ok">Disponível</span>
-                </div>
-
-                <div class="status">
-                    <span>Vídeo vertical</span>
-                    <span class="ok">Disponível</span>
-                </div>
-
-                <div class="status">
-                    <span>Conexão TikTok</span>
-                    <span class="ok">Autorizada pelo usuário</span>
-                </div>
-
-                <div class="status">
-                    <span>Confirmação antes do envio</span>
-                    <span class="ok">Obrigatória</span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section id="recursos">
-
-        <div class="container">
-
-            <div class="section-title">
-                <h2>Recursos</h2>
-
+            <div class="card">
+                <h3>Criação de vídeo</h3>
                 <p>
-                    Ferramentas para organizar a preparação do
-                    conteúdo antes da publicação.
+                    Prepara conteúdo em formato vertical adequado para
+                    plataformas de vídeos curtos.
                 </p>
             </div>
 
-
-            <div class="grid">
-
-                <article class="card">
-
-                    <div class="icon">🛒</div>
-
-                    <h3>Conteúdo de afiliados</h3>
-
-                    <p>
-                        Prepara informações de produtos e links
-                        de afiliado para auxiliar na criação de
-                        conteúdos promocionais.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <div class="icon">🎬</div>
-
-                    <h3>Vídeo vertical</h3>
-
-                    <p>
-                        Auxilia na montagem de vídeos em formato
-                        vertical apropriado para plataformas de
-                        vídeos curtos.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <div class="icon">📱</div>
-
-                    <h3>Integração com TikTok</h3>
-
-                    <p>
-                        A conta é conectada somente após
-                        autorização expressa do próprio usuário.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <div class="icon">✏️</div>
-
-                    <h3>Revisão antes de publicar</h3>
-
-                    <p>
-                        O usuário pode revisar as informações do
-                        conteúdo antes de confirmar o envio.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <div class="icon">🔐</div>
-
-                    <h3>Autorização segura</h3>
-
-                    <p>
-                        A integração utiliza o fluxo de
-                        autorização disponibilizado pelas
-                        plataformas compatíveis.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <div class="icon">📊</div>
-
-                    <h3>Status da publicação</h3>
-
-                    <p>
-                        O aplicativo acompanha o processamento
-                        para informar ao usuário o resultado da
-                        publicação.
-                    </p>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section
-        id="como-funciona"
-        class="dark-section"
-    >
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <h2>Como funciona</h2>
-
+            <div class="card">
+                <h3>Integração com TikTok</h3>
                 <p>
-                    O usuário mantém o controle durante todas as
-                    etapas.
+                    Permite que o usuário autorize sua própria conta por meio
+                    do processo oficial de autorização disponibilizado pelo TikTok.
                 </p>
-
             </div>
 
+            <div class="card">
+                <h3>Revisão antes do envio</h3>
+                <p>
+                    O usuário pode conferir o conteúdo antes de confirmar uma
+                    ação de publicação.
+                </p>
+            </div>
 
-            <div class="steps">
+            <div class="card">
+                <h3>Controle da conta</h3>
+                <p>
+                    A autorização é vinculada à conta escolhida pelo próprio
+                    usuário e pode ser gerenciada por ele.
+                </p>
+            </div>
 
-                <div class="step">
+            <div class="card">
+                <h3>Uso em desktop</h3>
+                <p>
+                    O aplicativo é executado localmente no computador do
+                    usuário para preparação e gerenciamento do conteúdo.
+                </p>
+            </div>
 
-                    <div class="number">1</div>
+        </div>
+    </div>
+</section>
 
-                    <h3>Selecionar conteúdo</h3>
+<section id="funcionamento">
+    <div class="container">
 
-                    <p>
-                        O usuário escolhe as informações do
-                        produto que deseja utilizar.
-                    </p>
+        <div class="section-title">
+            <h2>Como funciona</h2>
+            <p>
+                O fluxo foi desenvolvido para manter o usuário informado
+                durante as principais etapas.
+            </p>
+        </div>
 
-                </div>
+        <div class="steps">
 
+            <div class="step">
+                <div class="number">1</div>
+                <h3>Escolha do conteúdo</h3>
+                <p>
+                    O usuário seleciona ou prepara as informações do produto
+                    que deseja divulgar.
+                </p>
+            </div>
 
-                <div class="step">
+            <div class="step">
+                <div class="number">2</div>
+                <h3>Preparação</h3>
+                <p>
+                    O aplicativo organiza texto, mídia e formato do conteúdo.
+                </p>
+            </div>
 
-                    <div class="number">2</div>
+            <div class="step">
+                <div class="number">3</div>
+                <h3>Autorização</h3>
+                <p>
+                    Quando necessário, o usuário conecta sua conta do TikTok
+                    utilizando a autorização oficial da plataforma.
+                </p>
+            </div>
 
-                    <h3>Preparar</h3>
-
-                    <p>
-                        O Bot auxilia na criação do texto e do
-                        vídeo para revisão.
-                    </p>
-
-                </div>
-
-
-                <div class="step">
-
-                    <div class="number">3</div>
-
-                    <h3>Revisar</h3>
-
-                    <p>
-                        O usuário confere o conteúdo e as
-                        configurações antes do envio.
-                    </p>
-
-                </div>
-
-
-                <div class="step">
-
-                    <div class="number">4</div>
-
-                    <h3>Confirmar</h3>
-
-                    <p>
-                        A publicação somente é iniciada depois
-                        da confirmação expressa do usuário.
-                    </p>
-
-                </div>
-
+            <div class="step">
+                <div class="number">4</div>
+                <h3>Confirmação</h3>
+                <p>
+                    O usuário confere as informações e decide se deseja
+                    prosseguir com o envio.
+                </p>
             </div>
 
         </div>
 
-    </section>
+    </div>
+</section>
 
+<section id="seguranca" class="light-section">
+    <div class="container">
 
-    <section id="seguranca">
+        <div class="section-title">
+            <h2>Privacidade e segurança</h2>
+            <p>
+                Transparência sobre autorização e utilização dos dados.
+            </p>
+        </div>
 
-        <div class="container">
+        <div class="info-box">
 
-            <div class="control-box">
+            <p>
+                O Bot Afiliado não solicita que o usuário informe sua senha
+                do TikTok diretamente ao aplicativo.
+            </p>
 
-                <div>
+            <p>
+                A conexão com o TikTok utiliza o processo oficial de
+                autorização disponibilizado pela plataforma.
+            </p>
 
-                    <div class="section-title">
+            <p>
+                As permissões solicitadas são utilizadas exclusivamente para
+                fornecer as funcionalidades apresentadas ao usuário.
+            </p>
 
-                        <h2>
-                            Controle e segurança
-                        </h2>
+            <p>
+                Consulte nossa Política de Privacidade para obter mais
+                informações sobre tratamento de dados.
+            </p>
 
-                        <p>
-                            O Bot Afiliado foi desenvolvido para
-                            manter o usuário informado sobre o
-                            que será enviado à sua conta.
-                        </p>
+        </div>
 
-                    </div>
+    </div>
+</section>
 
-                </div>
+<section id="informacoes">
+    <div class="container">
 
+        <div class="section-title">
+            <h2>Informações e documentos</h2>
+            <p>
+                Consulte informações importantes relacionadas ao uso do
+                Bot Afiliado.
+            </p>
+        </div>
 
-                <div class="check-list">
+        <div class="links-area">
 
-                    <div class="check">
-                        <strong>✓</strong>
-                        A conta é conectada com autorização do usuário.
-                    </div>
+            <div class="link-card">
+                <h3>Termos de Serviço</h3>
+                <p>
+                    Regras e condições aplicáveis à utilização do aplicativo.
+                </p>
+                <a href="termos.html">Ler Termos de Serviço →</a>
+            </div>
 
-                    <div class="check">
-                        <strong>✓</strong>
-                        O conteúdo é preparado antes do envio.
-                    </div>
+            <div class="link-card">
+                <h3>Política de Privacidade</h3>
+                <p>
+                    Saiba como informações e autorizações são tratadas.
+                </p>
+                <a href="privacidade.html">Ler Política de Privacidade →</a>
+            </div>
 
-                    <div class="check">
-                        <strong>✓</strong>
-                        A publicação exige confirmação.
-                    </div>
-
-                    <div class="check">
-                        <strong>✓</strong>
-                        O status da publicação é acompanhado.
-                    </div>
-
-                    <div class="check">
-                        <strong>✓</strong>
-                        Dados não são vendidos a anunciantes.
-                    </div>
-
-                </div>
-
+            <div class="link-card">
+                <h3>Funcionamento</h3>
+                <p>
+                    Veja como o processo de criação e autorização funciona.
+                </p>
+                <a href="#funcionamento">Ver funcionamento →</a>
             </div>
 
         </div>
 
-    </section>
-
-
-    <section
-        id="faq"
-        class="dark-section"
-    >
-
-        <div class="container">
-
-            <div class="section-title">
-                <h2>Perguntas frequentes</h2>
-            </div>
-
-
-            <div class="faq">
-
-                <div class="faq-item">
-
-                    <h3>
-                        O Bot Afiliado é oficial do TikTok?
-                    </h3>
-
-                    <p>
-                        Não. O Bot Afiliado é uma ferramenta
-                        independente que utiliza integrações
-                        autorizadas disponibilizadas pelas
-                        plataformas compatíveis.
-                    </p>
-
-                </div>
-
-
-                <div class="faq-item">
-
-                    <h3>
-                        O Bot publica sem autorização?
-                    </h3>
-
-                    <p>
-                        Não. A publicação depende da autorização
-                        da conta e da confirmação do usuário.
-                    </p>
-
-                </div>
-
-
-                <div class="faq-item">
-
-                    <h3>
-                        O Bot Afiliado é oficial do Mercado Livre?
-                    </h3>
-
-                    <p>
-                        Não. O Bot Afiliado é uma ferramenta
-                        independente. Produtos, preços e
-                        disponibilidade são definidos pelos
-                        vendedores e pelo Mercado Livre.
-                    </p>
-
-                </div>
-
-
-                <div class="faq-item">
-
-                    <h3>
-                        Posso remover a autorização do TikTok?
-                    </h3>
-
-                    <p>
-                        Sim. O usuário pode gerenciar ou remover
-                        as autorizações concedidas por meio dos
-                        controles disponibilizados pelo TikTok.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
+    </div>
+</section>
 
 </main>
 
-
 <footer>
 
-    <div class="container">
-
-        <div class="footer-content">
-
-            <div class="footer-brand">
-                <img
-                    src="bot_afiliado_1024x1024.png"
-                    alt="Logo Bot Afiliado"
-                    class="footer-logo"
-                >
-                <strong>Bot Afiliado</strong>
-            </div>
-
-            <div class="legal-links">
-
-                <a href="termos.html">
-                    Termos de Serviço
-                </a>
-
-                <a href="privacidade.html">
-                    Política de Privacidade
-                </a>
-
-            </div>
-
-        </div>
-
-        <p class="disclaimer">
-            Bot Afiliado é uma ferramenta independente e não é
-            um produto oficial do TikTok ou do Mercado Livre.
-        </p>
-
+    <div class="footer-links">
+        <a href="index.html">Página inicial</a>
+        <a href="termos.html">Termos de Serviço</a>
+        <a href="privacidade.html">Política de Privacidade</a>
     </div>
+
+    <p>
+        © 2026 Bot Afiliado. Ferramenta independente para criadores de conteúdo.
+    </p>
+
+    <p>
+        TikTok e Mercado Livre são marcas pertencentes aos seus respectivos proprietários.
+    </p>
 
 </footer>
 
